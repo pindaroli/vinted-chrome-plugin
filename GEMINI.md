@@ -27,7 +27,7 @@ Estensione Chrome (Manifest V3) per l'analisi visiva e documentale automatizzata
 ## 🏛️ Architettura del Progetto
 
 ```
-vinted-ai-extension/
+vinted-chrome-plugin/
 ├── manifest.json                  # Manifest V3 (permissions: sidePanel, storage, activeTab, host_permissions)
 ├── vite.config.ts                 # Configurazione Vite con React + CRXJS plugin
 ├── vitest.config.ts               # Configurazione Vitest con happy-dom e test setup
