@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "Vinted AI Lens - Smart Multimodal Verifier",
+  "version": "1.0.7",
+  "description": "Analisi multimodale AI avanzata (Gemini, OpenAI, Ollama, LM Studio) per articoli Vinted con estrazione passiva e zero bot footprint.",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.vinted.it/*",
+    "*://*.vinted.fr/*",
+    "*://*.vinted.de/*",
+    "*://*.vinted.es/*",
+    "*://*.vinted.co.uk/*",
+    "*://*.vinted.com/*",
+    "*://*.vinted.pl/*",
+    "*://*.vinted.nl/*",
+    "*://*.vinted.be/*",
+    "*://*.vinted.pt/*",
+    "*://*.vinted.cz/*",
+    "*://*.vinted.at/*",
+    "*://*.vinted.ro/*",
+    "*://*.vinted.hu/*",
+    "*://*.vinted.lt/*",
+    "*://*.vinted.se/*",
+    "*://images1.vinted.net/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.openai.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "action": {
+    "default_title": "Apri Vinted AI Lens"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.vinted.it/items/*",
+        "*://*.vinted.fr/items/*",
+        "*://*.vinted.de/items/*",
+        "*://*.vinted.es/items/*",
+        "*://*.vinted.co.uk/items/*",
+        "*://*.vinted.com/items/*",
+        "*://*.vinted.pl/items/*",
+        "*://*.vinted.nl/items/*",
+        "*://*.vinted.be/items/*",
+        "*://*.vinted.pt/items/*",
+        "*://*.vinted.cz/items/*",
+        "*://*.vinted.at/items/*",
+        "*://*.vinted.ro/items/*",
+        "*://*.vinted.hu/items/*",
+        "*://*.vinted.lt/items/*",
+        "*://*.vinted.se/items/*"
+      ],
+      "js": [
+        "src/content.ts"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
